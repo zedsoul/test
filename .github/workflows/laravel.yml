@@ -18,14 +18,14 @@ jobs:
       - name: Deploy to Server
         uses: AEnterprise/rsync-deploy@v1.0
         env:
-          DEPLOY_KEY: ${{ secrets.SERVER_KEY }}
+          password: ${{ secrets.PASSWORD }}
           ARGS: -avz --no-owner --no-group --no-perms --progress --exclude='.*' --exclude='/vendor' --exclude='storage/logs/' --delete
           SERVER_PORT: ${{ secrets.SERVER_PORT }}
           # 要推送的文件夹，路径相对于代码仓库的根目录
           FOLDER: ./
           SERVER_IP: ${{ secrets.SERVER_HOST }}
           USERNAME: ${{ secrets.SERVER_USERNAME }}
-          SERVER_DESTINATION: /tmp/laravel-test
+          SERVER_DESTINATION: /www/wwwroot/baidu.com
       # 第三步，登录服务器，执行安装依赖等操作   
       - name: Execute Script
         uses: appleboy/ssh-action@master
