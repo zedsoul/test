@@ -34,6 +34,6 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_KEY }}
           script: |
-            cd /tmp/laravel-test
+            cd /www/wwwroot/baidu.com
             chmod -R 777 storage/
             composer install
